@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Archiv keší</title>
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+        <!-- ikonka polohy -->
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css"> 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- knihovna obrázků a písma -->
+
+        <link rel="stylesheet" href="./node_modules/leaflet.markercluster/dist/MarkerCluster.css" /> 
+	    <link rel="stylesheet" href="./node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
+        <link rel="stylesheet" href="./archiv.css">
+
+        <link rel="icon" type="image/x-icon" href="./img/icon.png">
+        
+    </head>
+
+    <body onload="nacti()">
+
+        <header>
+            <img style="float: left" src="./img/header.png" alt="geo">
+        </header>
+    
+        <main>
+
+            <aside> 
+                
+                <h1>INFO O KEŠI</h1>
+                <div style="display: flex; width: 100%; flex-wrap: wrap;">
+                    <section class="nazev-kese">
+                        <h2><i class="fa fa-fw fa-user"></i>&nbsp;Název keše</h2>
+                        <p class="info" id="nazev_kese_zde"></p>
+                    </section>
+                    <section class="gc-kod">
+                        <h2><i class="fa fa-fw fa-bookmark"></i>&nbsp;GC</h2>
+                        <a class="info" id="gc_kod_zde" href="" target="_blank"></a>
+                    </section>
+                    <section class="gps">
+                        <h2><i class="fa fa-fw fa-location-arrow"></i>&nbsp;Souřadnice</h2>
+                        <p class="info" id="souradniceDDMMmm"></p>
+                        <p class="info" id="souradnice_zde"></p>
+                    </section>
+                </div>
+                
+
+            </aside>
+
+            <div id="map"></div> 
+
+        </main>    
+
+        <footer>
+            <p>&copy; 2021 <b>MarWen </b><a href="mailto: mar6wen8@gmail.com" target="_blank" aria-label="e-mail"><i style="font-size: 20px;" class="fa fa-envelope"></i></a></p>
+            <p>Aktualizováno dne <b>05.07.2023</b></p>
+        </footer>
+
+
+        <script src="./node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+        <script type="text/javascript" src="./archiv.js"></script>
+
+
+
+    </body>
+</html>

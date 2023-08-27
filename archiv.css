@@ -1,0 +1,346 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./background.svg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    margin: 0 auto;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    line-height: 1.6; 
+    cursor: default;  
+}    
+
+
+/***************************************/
+/*               HLAVIČKA              */
+/***************************************/
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+}  
+
+header h2 {
+    cursor: pointer;
+    font-size: 25px;
+    margin: 0 20px 10px;
+    text-align: center;
+    width: 100%;
+}
+
+header img {
+    width: 100%;
+}  
+
+header::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: green;
+}
+
+
+
+/***************************************/
+/*                 TĚLO                */
+/***************************************/
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#map {
+    width: 100vw;
+    height: calc(100vh - 150px);
+    border: 2px solid green;
+}
+
+.leaflet-popup-content > div {
+    margin-bottom: 2px;
+}
+
+.leaflet-right { 
+    font-size: 15px;
+}
+
+.leaflet-top.leaflet-right .leaflet-control-layers:nth-child(1) .leaflet-control-layers-toggle  {
+    background-image: url("./img/geoIcon.png");
+    background-size: 85%;
+    padding-left: 127px;
+}
+    
+.popup-name {
+    font-weight: bold;
+}
+
+aside {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    columns: 2;
+    column-gap: 2vw;
+}
+
+aside h1 {
+    margin: 10px;
+    width: 20vw;
+    flex: 1 1 20vw;
+    text-align: center;
+    color: green;
+    font-size: 30px;
+    border-bottom: 3px solid green;
+}
+
+aside section {
+    width: 100%;
+}
+
+aside section:last-of-type {
+    text-align: left;
+}
+    
+aside section #coords {
+    white-space: break-spaces;
+}
+
+aside h2 {
+    font-size: 100%;
+    color: black;
+    margin: 10px auto;
+}
+
+aside p.info {
+    color: green;
+    font-size: 16px;
+    padding-left: 20px;
+} 
+
+aside a {
+    color: green;
+    font-size: 16px;
+    /* padding-left: 20px; */
+}
+
+aside a:hover {
+    color: black;
+}
+
+.info {
+    margin: 10px auto;
+}
+
+
+
+
+/***************************************/
+/*                FOOTER               */
+/***************************************/
+
+footer {
+    font-size: 12px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} 
+
+footer a:hover {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************/
+/*                TABLET               */
+/***************************************/
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    
+    header img {
+        width: 40%;
+        margin-left: 10px;
+    }
+
+    header h2 {
+        font-size: 25px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    aside h1 {
+        font-size: 25px;
+        flex: 100%;
+        text-decoration: underline;
+        border-bottom: 0;
+    }
+
+    aside h2 {
+        font-size: 20px;
+    }
+      
+    aside section {
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+        
+    aside section:last-of-type {
+        text-align: left;
+    }
+        
+    aside section #coords {
+        white-space: break-spaces;
+    }
+    
+    .nazev-kese {
+        width: 60%;
+    }
+
+    .gc-kod {
+        width: 29%;
+    }
+
+    #map {
+        height: calc(100vh - 250px);
+    }
+        
+    .popup-name {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 200px;
+    }
+    
+    footer {
+        font-size: 50%;
+    } 
+
+
+}
+
+
+
+
+
+/***************************************/
+/*             TABLET - PC             */
+/***************************************/
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    aside {
+        width: 100%;
+    }
+
+    aside h1 {
+        margin: auto;
+        font-size: 27px;
+        border-bottom: 0;        
+    }
+
+    aside h2 {
+        font-size: 22px;
+    }
+
+    aside p.info {
+        font-size: 17px;
+        margin: 5px auto;
+    }
+    
+    .header {
+        width: 30%;
+    }
+
+    header img {
+        width: 50%;
+    }
+    
+    aside section {
+        flex: 30%;
+        margin: 10px;
+    }
+
+}
+
+
+
+
+/***************************************/
+/*                  PC                 */
+/***************************************/
+
+@media screen and (min-width: 1025px) {
+
+    header::after {
+        display: none;
+    }
+
+    header img {
+        height: 80px;
+        object-fit: contain;
+        object-position: left;
+        margin-bottom: 10px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    #map {
+        width: 70%;
+        height: calc(100vh - 180px);
+        border: 2px solid green;
+    }
+
+    aside {
+        display: flex;
+        height: 100%;
+        font-size: 30px;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+    }
+
+    aside h2 {
+        font-size: 80%;
+    }
+
+    aside p.info, aside a {
+        font-size: 20px;
+    }
+
+    aside section {
+        flex: 0 0 auto;
+        max-width: calc(100vw / 4 - 10px);
+    }
+
+    footer {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    
+
+
+}
